@@ -33,6 +33,6 @@ public class ToolBarGui : MonoBehaviour {
 	void OnGUI()
 	{
 		GUI.Box(boxes["ToolBar"], "Atoms");
-
+		
 	}
 }

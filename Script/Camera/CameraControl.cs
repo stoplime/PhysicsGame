@@ -42,28 +42,28 @@ public class CameraControl : MonoBehaviour {
  
     void LateUpdate () 
     {
-        if (target && Input.GetKey(GameManager.KeyProfile["rightClick"]))
-        {
-            x += Input.GetAxis("Mouse X") * xSpeed * distance * 0.02f;
-            y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
- 
-            y = ClampAngle(y, yMinLimit, yMaxLimit);
- 
-            Quaternion rotation = Quaternion.Euler(y, x, 0);
- 
-            distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel")*5, distanceMin, distanceMax);
- 
-            RaycastHit hit;
-            if (Physics.Linecast (target.position, transform.position, out hit)) 
-            {
-                distance -=  hit.distance;
-            }
-            Vector3 negDistance = new Vector3(0.0f, 0.0f, -distance);
-            Vector3 position = rotation * negDistance + target.position;
- 
-            transform.rotation = rotation;
-            transform.position = position;
-        }
+		if (Input.GetKey(GameManager.KeyProfile["rightClick"]))
+		{
+			x += Input.GetAxis("Mouse X") * xSpeed * distance * 0.02f;
+			y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
+		}
+
+		y = ClampAngle(y, yMinLimit, yMaxLimit);
+
+		Quaternion rotation = Quaternion.Euler(y, x, 0);
+
+		distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel")*5, distanceMin, distanceMax);
+
+		RaycastHit hit;
+		if (Physics.Linecast (target.position, transform.position, out hit)) 
+		{
+			distance -=  hit.distance;
+		}
+		Vector3 negDistance = new Vector3(0.0f, 0.0f, -distance);
+		Vector3 position = rotation * negDistance + target.position;
+
+		transform.rotation = rotation;
+		transform.position = position;
     }
  
     public static float ClampAngle(float angle, float min, float max)

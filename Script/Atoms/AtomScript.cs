@@ -6,6 +6,8 @@ public class AtomScript : MonoBehaviour {
 
 	public Atom AtomType;
 
+	public List<GameObject> AttachmentNodes;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -13,6 +15,11 @@ public class AtomScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
+	}
+
+	private void LoadAtomStats()
+	{
 		
 	}
 }

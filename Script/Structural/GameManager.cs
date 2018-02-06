@@ -16,26 +16,4 @@ public static class GameManager {
 		,{"leftClick", KeyCode.Mouse0}
 		,{"rightClick", KeyCode.Mouse1}
 	};
-
-	public static enum AtomElement
-	{
-		Hydrogen,
-		Helium,
-		Lithium,
-		Beryllium,
-		Boron,
-		Carbon,
-		Nitrogen,
-		Oxygen,
-		Fluorine,
-		Neon,
-		Sodium,
-		Magnesium,
-		Aluminium,
-		Silicon,
-		Phosphorus,
-		Sulfur,
-		Chlorine,
-		Argon
-	}
 }
